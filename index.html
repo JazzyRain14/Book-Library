@@ -1,15 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
-  <body>
-    <div id="app">
+  <body class="bg-gray-100 font-sans p-8">
+      <main class="max-w-3xl mx-auto">
+        <h1 class="bg-white mb-5 rounded text-center py-2 text-2xl text-gray-700">📖Book Library</h1>
+        <section class="bg-white p-5">
+          <h2 class="rounded text-center py-2 text-2xl text-gray-700">Add a New Book</h2>
+          <form id="bookForm" class="flex flex-col gap-5">
+            <input class="border rounded p-2" type="text" id="title" placeholder="Title" required />
+            <input class="border rounded p-2" type="text" id="author" placeholder="Author" required />
+            <input class="border rounded p-2" type="text" id="genre" placeholder="Genre" required />
+            <input class="border rounded p-2" type="date" id="pubDate" required />
+            <button class="bg-gray-700/70 py-3 rounded text-white font-semibold hover:bg-gray-700/65 cursor-pointer" type="submit">Add Book</button>
+          </form>
+        </section>
+      </main>
 
-    </div>
+      <section class="search">
+        <input type="text" id="searchInput" placeholder="Search by title, author or genre..." />
+      </section>
+
+
+      <section class="book-list">
+        <h2>Library</h2>
+        <div id="booksContainer"></div>
+      </section>
+    </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
